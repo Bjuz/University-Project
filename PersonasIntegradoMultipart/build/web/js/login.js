@@ -1,7 +1,6 @@
 var url="http://localhost:8080/PersonasIntegradoMultipart/";
 
 function login(){
-    
         usuario = {
             id: document.getElementById("id").value,
             clave: document.getElementById("clave").value
@@ -45,8 +44,7 @@ function login(){
         (async ()=>{
             const response = await fetch(request);
             if (!response.ok) {errorMessage(response.status,$("#loginDialog #errorDiv"));return;}
-            sessionStorage.removeItem('user');
-            document.location = url+"about.html";                         
+            sessionStorage.removeItem('user');                        
         })();      
     }
 
@@ -62,15 +60,7 @@ function login(){
         return;        
     }  
   
-  /*function loadLogin(){   
-        let request = new Request(url+'login.html', {method: 'GET'});
-        (async ()=>{
-            const response = await fetch(request);
-            if (!response.ok) {errorMessage(response.status,$("#loginDialog #errorDiv"));return;}
-            content = await response.text();
-            $('body').append(content); 
-            $("#login").click(login);
-            $("#logout").click(logout);                          
-        })();     
-  }*/
   
+  window.addEventListener('DOMContentLoaded',  (e) =>{
+    logout();
+})
