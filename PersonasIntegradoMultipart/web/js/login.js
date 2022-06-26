@@ -13,7 +13,7 @@ function login(){
         (async ()=>{
             const response = await fetch(request);
             
-            if (!response.ok) {alert("Usuario o contraseña incorrecta.");;return}
+            if (!response.ok) {alert("Usuario o contraseña incorrecta.");return}
             
             usuario = await response.json();
             sessionStorage.setItem('user', JSON.stringify(usuario));
@@ -28,15 +28,9 @@ function login(){
                 alert("Pacientes no tienen acceso al sistema.");
                 return;
             }
-            alert("Usuario o contraseña incorrecta.");
-                
-                                   
+            alert("Usuario o contraseña incorrecta.");                    
         })(); 
 }
-
-
-
-
 
 
     function logout(){

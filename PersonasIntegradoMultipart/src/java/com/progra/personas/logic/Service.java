@@ -19,6 +19,7 @@ public class Service {
     
     HashMap<String,Persona> personas;
     static Map<String,Usuario> usuarios;
+    static Map<String,Doctor> Doctores;
 
     
     private Service(){
@@ -28,7 +29,14 @@ public class Service {
         
         usuarios = new HashMap<>();
         usuarios.put("001", new Usuario("001","001","Juan Perez","ADM"));
-        usuarios.put("002", new Usuario("002","002","Ana Arburola","CLI"));           
+        usuarios.put("002", new Usuario("002","002","Ana Arburola","ADM"));
+        usuarios.put("003", new Usuario("003","003","Ana Perez","CLI"));
+        usuarios.put("004", new Usuario("004","004","Juan Arburola","ADM"));
+        
+        Doctores = new HashMap<>();
+        usuarios.put("001", new Doctor("7","16","20","001","001","Juan Perez","ADM"));
+        usuarios.put("002", new Doctor("7","16","30","002","002","Juan Mariano","ADM"));
+        usuarios.put("004", new Doctor("7","16","60","004","004","Juan Arburola","ADM"));
     }
 
     public List<Persona> personaListAll() {
@@ -85,5 +93,11 @@ public class Service {
         if (result==null) throw new Exception("Usuario no existe");
         return result;
     }      
+    
+     public static Doctor get(Doctor id)throws Exception{
+        Doctor result = Doctores.get(id.getId());
+        if (result==null) throw new Exception("Usuario no existe");
+        return result;
+    }   
     
 }
