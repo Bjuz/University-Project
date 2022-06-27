@@ -53,6 +53,11 @@ function GuardarPaciente(){
      
 });
 
+function logout(){
+
+        window.location.href ="about.html";
+    }
+
 
 
 

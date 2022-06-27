@@ -13,7 +13,7 @@ function login(){
         (async ()=>{
             const response = await fetch(request);
             
-            if (!response.ok) {alert("Usuario o contraseña incorrecta.");return}
+            if (!response.ok) {alert("Usuario o contraseña incorrecta.");}
             
             usuario = await response.json();
             sessionStorage.setItem('user', JSON.stringify(usuario));

@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7b19f83de5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/UpdatePacientData.css">
     <link rel="stylesheet" href="css/NavigationBar.css">
+    <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/Menu.css">
-    <script src="js/LogOut.js"></script>
-    <title>Actualizar informacion</title>
+    <link rel="stylesheet" href="css/KeepApointment.css">
+     <script type="text/javascript" src="js/LogOut.js"></script>
+
+    
+    <title>Atender cita</title>
 </head>
 <body>
-
+    
     <nav>
         <ul>
             <br>
@@ -31,12 +33,7 @@
                 </a>    
             </li>
 
-            <li>
-                <a href="KeepAppointment.html">
-                    <i class="fas fa-stethoscope"></i>
-                    <span class="nav-item">Atender cita</span>
-                </a>    
-            </li>
+           
 
             <li>
                 <a href="UpdatePacientData.html">
@@ -60,7 +57,7 @@
                 </a>    
             </li>
 
-            <li>
+           <li>
                 <a href="#" onclick="logout()" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesión</span>
@@ -70,27 +67,55 @@
         </ul>
     </nav>
 
-    <main>
-        <div class="container">
-            <h1 class="txt-1">Gestionar la información de los pacientes</h1>
+    <div class="container">
+        <h1 class="txt-1">Atender una cita</h1>
 
-            <form action="ChangePacientData.html">
-                
-                <div class="container1">
-                    <h2 class="txt-2">Nombre del paciente:</h2>
-                    <div class="input-field">
-                        <input class="pacient-name" type="pacient-name" id="date" >
-                    </div>
+        <form action="#">
+            
+            <div class="container1">
+                <h2 class="txt-2">Fecha:</h2>
+                <div class="input-field">
+                    <input type="date" id="date" style="width:250px">
                 </div>
+            </div>
 
-                <div class="container-2">
-                    <br><br>   
-                    <input type="submit" class="btn-send" value="Siguiente">
-                   </div>
-            </form>
+            <div class="container1">
+                <h2 class="txt-2">Hora:</h2>
+                <div class="input-field">
+                    <input type="time" id="time" style="width:250px">
+                </div>
+            </div>
 
-        </div>
-    </main>
-    
+            <div class="container1">
+                <h2 class="txt-2">Paciente:</h2>
+                <div class="input-field">
+                    <input type="text" id="pacient-name" style="width:250px">
+                </div>
+            </div>
+
+            <div class="container1">
+                <h2 class="txt-2">Prescripcion medicamentos:</h2>
+                <div class="input-field">
+                    <input type="text" id="pacient-name" style="width:250px">
+                </div>
+            </div>
+           
+            <div class="container1">
+                <h2 class="txt-2">Diagnostico:</h2>
+                <div class="input-field txtarea">
+                    <textarea class="txtarea" id="bio" rows="" cols="100"></textarea>
+                </div>
+            </div>
+
+            
+
+                
+           <div class="container-2">
+            <br><br>   
+            <input type="submit" class="btn-send" value="Registrar cita">
+           </div>
+
+        </form>
+
 </body>
 </html>

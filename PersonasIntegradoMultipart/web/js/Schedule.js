@@ -18,6 +18,7 @@ function ObtenerDoctor(){
             pacientes: usuario.pacientes
         };
         sessionStorage.setItem('Doctor', JSON.stringify(Doctor));
+        
     }else{
          usuario =  JSON.parse(sessionStorage.getItem("user"));
      console.log(usuario);
@@ -66,7 +67,7 @@ function Rellenar(horafinals, horas,frecuencias){
             pacientes: usuario.pacientes
         };
         let doctores =  Doctor.pacientes;
-        console.log(doctores.length);
+ 
         doctores.forEach(paciente=>{
              tabla2.innerHTML += `<td draggable="true"  class="draggable" id="Hola"> ${paciente.nombre}</td>`;
         });
@@ -199,13 +200,8 @@ function dragdrop(e){
 }
 
 function logout(){
-        let request = new Request(url+'api/login', {method: 'DELETE', headers: { }});
-        (async ()=>{
-            const response = await fetch(request);
-            if (!response.ok) {alert(response.status,$("#loginDialog #errorDiv"));return;}
-            sessionStorage.removeItem('user');                        
-        })();    
-        window.location.href ="index.html"
+   
+        window.location.href ="about.html";
     }
 
 

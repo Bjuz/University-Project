@@ -27,13 +27,25 @@ public class Service {
         personas.put("111", new Persona("111","Juan","M"));
         personas.put("222", new Persona("222","Maria","F"));
         ArrayList<Paciente> pacientes =  new ArrayList<Paciente>();
-        pacientes.add(new Paciente("Enfermedad","Urgente"," Maria"));
+        pacientes.add(new Paciente("Dolor de cabeza","Urgente"," Camila"));
+        pacientes.add(new Paciente("Pereza","Urgente"," Jeaustin"));
+        pacientes.add(new Paciente("Hola","Urgente"," Francisco"));
+        
+         ArrayList<Paciente> pacientes2 =  new ArrayList<Paciente>();
+        pacientes2.add(new Paciente("Dolor de cabeza","Urgente"," Marco"));
+        pacientes2.add(new Paciente("Pereza","Urgente"," Pablo"));
+        pacientes2.add(new Paciente("Hola","Urgente"," Juan"));
+        
+         ArrayList<Paciente> pacientes3 =  new ArrayList<Paciente>();
+        pacientes3.add(new Paciente("Dolor de cabeza","Urgente"," Stanlee"));
+        pacientes3.add(new Paciente("Pereza","Urgente"," Daniel"));
+        pacientes3.add(new Paciente("Hola","Urgente"," Sofia"));
         usuarios = new HashMap<>();
 
         Doctores = new HashMap<>();
         usuarios.put("001", new Doctor("7","16","20","001","001","Juan Perez","ADM",pacientes));
-        usuarios.put("002", new Doctor("7","16","30","002","002","Juan Mariano","ADM",pacientes));
-        usuarios.put("003", new Doctor("7","16","60","003","003","Juan Arburola","ADM",pacientes));
+        usuarios.put("002", new Doctor("7","16","30","002","002","Juan Mariano","ADM",pacientes2));
+        usuarios.put("003", new Doctor("7","16","60","003","003","Juan Arburola","ADM",pacientes3));
     }
 
     public List<Persona> personaListAll() {

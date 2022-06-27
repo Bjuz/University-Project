@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7b19f83de5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/UpdatePacientData.css">
     <link rel="stylesheet" href="css/NavigationBar.css">
+    <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/Menu.css">
-    <script src="js/LogOut.js"></script>
-    <title>Actualizar informacion</title>
+    <link rel="stylesheet" href="css/LaboratoryTest.css">
+    <script type="text/javascript" src="js/LogOut.js"></script>
+    
+    <title>Examenes laboratorio</title>
 </head>
 <body>
-
+    
     <nav>
         <ul>
             <br>
@@ -52,15 +53,9 @@
                 </a>    
             </li>
 
-            
-            <li>
-                <a href="LaboratoryTest.html">
-                    <i class="fas fa-flask"></i>
-                    <span class="nav-item">Examenes laboratorio</span>
-                </a>    
-            </li>
 
-            <li>
+
+              <li>
                 <a href="#" onclick="logout()" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesión</span>
@@ -72,14 +67,14 @@
 
     <main>
         <div class="container">
-            <h1 class="txt-1">Gestionar la información de los pacientes</h1>
+            <h1 class="txt-1">Gestion de examenes de laboratorio</h1>
 
-            <form action="ChangePacientData.html">
+            <form action="ViewLaboratoryTest.html">
                 
                 <div class="container1">
                     <h2 class="txt-2">Nombre del paciente:</h2>
                     <div class="input-field">
-                        <input class="pacient-name" type="pacient-name" id="date" >
+                        <input type="pacient-name" id="date" style="width:250px">
                     </div>
                 </div>
 
@@ -91,6 +86,6 @@
 
         </div>
     </main>
-    
+
 </body>
 </html>
