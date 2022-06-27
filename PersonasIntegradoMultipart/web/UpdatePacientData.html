@@ -5,46 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7b19f83de5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/NavigationBar.css">
     <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Schedule.css">
-    <link rel="stylesheet" href="css/Table.css">
-    <title>Agenda</title>
+    <link rel="stylesheet" href="css/UpdatePacientData.css">
+    <link rel="stylesheet" href="css/NavigationBar.css">
+    <link rel="stylesheet" href="css/Menu.css">
+    <title>Actualizar informacion</title>
 </head>
 <body>
-    
+
     <nav>
         <ul>
+            <br>
             <li>
-                <a href="/pages/Schedule.html">
+                <a href="Schedule.html">
                     <i class="fas fa-calendar"></i>
                     <span class="nav-item">Agenda</span>
                 </a>    
             </li>
 
             <li>
-                <a href="/pages/ScheduleAppointment.html">
+                <a href="ScheduleAppointment.html">
                     <i class="fas fa-clock"></i>
                     <span class="nav-item">Agendar cita</span>
                 </a>    
             </li>
 
             <li>
-                <a href="/pages/KeepAppointment.html">
+                <a href="KeepAppointment.html">
                     <i class="fas fa-stethoscope"></i>
                     <span class="nav-item">Atender cita</span>
                 </a>    
             </li>
 
             <li>
-                <a href="/pages/UpdatePacientData.html">
+                <a href="UpdatePacientData.html">
                     <i class="fas fa-spinner"></i>
                     <span class="nav-item">Actualizar paciente</span>
                 </a>    
             </li>
 
             <li>
-                <a href="/pages/AppointmentHistory.html">
+                <a href="AppointmentHistory.html">
                     <i class="fas fa-file-medical"></i>
                     <span class="nav-item">Historial medico</span>
                 </a>    
@@ -52,14 +53,14 @@
 
             
             <li>
-                <a href="/pages/LaboratoryTest.html">
+                <a href="LaboratoryTest.html">
                     <i class="fas fa-flask"></i>
                     <span class="nav-item">Examenes laboratorio</span>
                 </a>    
             </li>
 
             <li>
-                <a href="#" onclick="logout()" class="logout">
+                <a href="about.hmtl" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesión</span>
                 </a>    
@@ -69,42 +70,26 @@
     </nav>
 
     <main>
+        <div class="container">
+            <h1 class="txt-1">Gestionar la información de los pacientes</h1>
 
-        <div>
-            <h1 class="txt-1">Agenda de citas</h1>
+            <form action="/pages/ChangePacientData.html">
+                
+                <div class="container1">
+                    <h2 class="txt-2">Nombre del paciente:</h2>
+                    <div class="input-field">
+                        <input class="pacient-name" type="pacient-name" id="date" >
+                    </div>
+                </div>
+
+                <div class="container-2">
+                    <br><br>   
+                    <input type="submit" class="btn-send" value="Siguiente">
+                   </div>
+            </form>
+
         </div>
-
-
-        <div class="tabla-info">
-
-            <table class="content-table">
-                <thead>
-                  <tr>
-                    <th>HORA</th>
-                    <th>LUNES</th>
-                    <th>MARTES</th>
-                    <th>MIERCOLES</th>
-                    <th>JUEVES</th>
-                    <th>VIERNES</th>
-                    <th>SABADO</th>
-                    <th>DOMINGO</th>
-                  </tr>
-                </thead>
-    
-                <tbody id="Tabla">
-                  
-
-                </tbody>
-
-              </table>
-         </div>
-
-
-
     </main>
-
-
-    <script type="text/javascript" src="js/Schedule.js"></script>
+    
 </body>
-
 </html>

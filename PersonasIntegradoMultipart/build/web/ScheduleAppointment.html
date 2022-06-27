@@ -7,14 +7,15 @@
     <script src="https://kit.fontawesome.com/7b19f83de5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/NavigationBar.css">
     <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Schedule.css">
-    <link rel="stylesheet" href="css/Table.css">
-    <title>Agenda</title>
+    <link rel="stylesheet" href="cssScheduleAppointment.css">
+    <link rel="stylesheet" href="css/Menu.css">
+    <title>Agendar cita</title>
 </head>
 <body>
     
     <nav>
         <ul>
+        
             <li>
                 <a href="/pages/Schedule.html">
                     <i class="fas fa-calendar"></i>
@@ -59,7 +60,7 @@
             </li>
 
             <li>
-                <a href="#" onclick="logout()" class="logout">
+                <a href="#" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesión</span>
                 </a>    
@@ -70,41 +71,58 @@
 
     <main>
 
-        <div>
-            <h1 class="txt-1">Agenda de citas</h1>
+        <div class="container">
+            <h1 class="txt-1">Agendar una cita</h1>
+
+            <form action="#">
+                
+                <!--
+                <div class="container1">
+                    <h2 class="txt-2">Fecha:</h2>
+                    <div class="input-field">
+                        <input type="date" id="date" style="width:250px">
+                    </div>
+                </div>
+
+                <div class="container1">
+                    <h2 class="txt-2">Hora:</h2>
+                    <div class="input-field">
+                        <input type="time" id="time" style="width:250px">
+                    </div>
+                </div>-->
+
+                <div class="container1">
+                    <h2 class="txt-2">Paciente:</h2>
+                    <div class="input-field">
+                        <input type="text" id="pacient-name" style="width:250px">
+                    </div>
+                </div>
+                <div class="container1">
+                    <h2 class="txt-2">Tipo:</h2>
+                    <div class="input-field">
+                        <input type="text" id="type" style="width:250px">
+                    </div>
+                </div>
+
+                <div class="container1">
+                    <h2 class="txt-2">Motivo:</h2>
+                    <div class="input-field">
+                        <input type="text" id="justification" style="width:250px">
+                    </div>
+                </div>
+
+               <div class="container-2">
+                <br><br>   
+                <input type="submit" class="btn-send" value="Registrar cita">
+               </div>
+
+            </form>
+
         </div>
 
-
-        <div class="tabla-info">
-
-            <table class="content-table">
-                <thead>
-                  <tr>
-                    <th>HORA</th>
-                    <th>LUNES</th>
-                    <th>MARTES</th>
-                    <th>MIERCOLES</th>
-                    <th>JUEVES</th>
-                    <th>VIERNES</th>
-                    <th>SABADO</th>
-                    <th>DOMINGO</th>
-                  </tr>
-                </thead>
-    
-                <tbody id="Tabla">
-                  
-
-                </tbody>
-
-              </table>
-         </div>
-
-
+        
 
     </main>
 
-
-    <script type="text/javascript" src="js/Schedule.js"></script>
 </body>
-
 </html>

@@ -38,7 +38,8 @@ function login(){
         (async ()=>{
             const response = await fetch(request);
             if (!response.ok) {errorMessage(response.status,$("#loginDialog #errorDiv"));return;}
-            sessionStorage.removeItem('user');                        
+            sessionStorage.removeItem('user');       
+            sessionStorage.removeItem('Doctor');
         })();      
     }
 

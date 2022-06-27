@@ -44,7 +44,8 @@ public class Login {
     @DELETE 
     public void logout() {  
         HttpSession session = request.getSession(true);
-        session.removeAttribute("user");           
+        session.removeAttribute("user");   
+        session.removeAttribute("Doctor");
         session.invalidate();
     }
     

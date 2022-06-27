@@ -53,6 +53,7 @@ public class Usuario {
         this.nombre = nombre;
         this.rol = rol;
     }
+    
 
 
 

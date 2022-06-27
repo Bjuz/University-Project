@@ -4,6 +4,9 @@
  */
 package com.progra.personas.logic;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  *
  * @author jeaus
@@ -12,12 +15,34 @@ public class Doctor extends Usuario {
     String HoraEntrada;
     String HoraSalida;
     String Frecuencia;
-
-    public Doctor(String HoraEntrada, String HoraSalida, String Frecuencia, String id, String clave, String nombre, String rol) {
+     ArrayList<Paciente> pacientes;
+    
+    public void IngresaPaciente(Paciente paciente){
+        pacientes.add(paciente);
+    }
+    public  ArrayList<Paciente> getPacientes(){
+        return pacientes;
+    }
+    
+    public void setPaciente(ArrayList<Paciente> pacientes){
+        this.pacientes = pacientes;
+    }
+    
+    public Paciente getPaciente(String nombre){
+        for(Paciente paciente : pacientes){
+            if(paciente.getNombre().equals(nombre)){
+                return paciente;
+            }
+        }
+        return null;
+    }
+            
+    public Doctor(String HoraEntrada, String HoraSalida, String Frecuencia, String id, String clave, String nombre, String rol , ArrayList<Paciente> pacientes ) {
         super(id, clave, nombre, rol);
         this.HoraEntrada = HoraEntrada;
         this.HoraSalida = HoraSalida;
         this.Frecuencia = Frecuencia;
+        this.pacientes =  pacientes;
     }
 
     public String getHoraEntrada() {

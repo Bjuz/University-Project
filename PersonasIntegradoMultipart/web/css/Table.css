@@ -1,9 +1,14 @@
 .tabla-info{
     position: relative;
     left: 25%;
-    width: 150px;  
+    width: 150px;
     top: 60px; 
-   
+    max-height: 850px;
+    min-height: 800px;
+    max-width: 90%;
+    width: 1500px;
+    height: 1500px;
+    overflow-y: scroll;
 }
 
 .content-table {

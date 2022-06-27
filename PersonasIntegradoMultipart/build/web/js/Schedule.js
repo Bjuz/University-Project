@@ -12,13 +12,29 @@ function ObtenerDoctor(){
             HoraSalida:usuario.horaSalida,
             Frecuencia:usuario.frecuencia,
             nombre:usuario.nombre,
-            rol: usuario.rol   
+            rol: usuario.rol  
+            
         };
-        
 
-
-            sessionStorage.setItem('Doctor', JSON.stringify(Doctor));
         
+       /* let Doctores = [Doctor,Doctor,Doctor];
+
+        sessionStorage.setItem('Doctores', JSON.stringify(Doctores));
+        let arrayDoc =  JSON.parse(sessionStorage.getItem("Doctores"));
+        arrayDoc.forEach(function(Doctors){
+            Doctors = {
+            id: Doctors.id,
+            clave: Doctors.clave,
+            horaEntrada: Doctors.horaEntrada,
+            HoraSalida:Doctors.HoraSalida,
+            Frecuencia:Doctors.Frecuencia,
+            nombre:Doctors.nombre,
+            rol: Doctors.rol   
+        };
+            console.log(Doctors);
+        })
+        sessionStorage.setItem('Doctor', JSON.stringify(Doctor));*/
+        sessionStorage.setItem('Doctor', JSON.stringify(Doctor));
         console.log(Doctor.nombre);
         console.log(Doctor.clave);
         
@@ -52,7 +68,7 @@ function Rellenar(horafinals, horas,frecuencias){
 
     for(let i = hora; i<horaFinal; i+frecuencia){
         const tabla = document.getElementById('Tabla');
-        if(hora <11){
+        if(hora <=11){
             terminacion = "am";
         }else{
             terminacion = "pm";
@@ -172,6 +188,16 @@ function dragdrop(e){
         item.addEventListener('dragend', handleDragEnd, false);
       });
 }
+
+function logout(){
+        let request = new Request(url+'api/login', {method: 'DELETE', headers: { }});
+        (async ()=>{
+            const response = await fetch(request);
+            if (!response.ok) {alert(response.status,$("#loginDialog #errorDiv"));return;}
+            sessionStorage.removeItem('user');                        
+        })();    
+        window.location.href ="index.html"
+    }
 
 
 
