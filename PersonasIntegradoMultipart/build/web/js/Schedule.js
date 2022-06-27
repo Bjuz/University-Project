@@ -3,7 +3,23 @@ var url="http://localhost:8080/PersonasIntegradoMultipart/";
 function ObtenerDoctor(){
     
     //String HoraEntrada, String HoraSalida, String Frecuencia, String id, String clave, String nombre, String rol
-     usuario =  JSON.parse(sessionStorage.getItem("user"));
+    
+    if(sessionStorage.getItem("Doctor")){
+     usuario =  JSON.parse(sessionStorage.getItem("Doctor"));
+     console.log(usuario);
+        Doctor = {
+            id: usuario.id,
+            clave: usuario.clave,
+            horaEntrada: usuario.horaEntrada,
+            HoraSalida:usuario.HoraSalida,
+            Frecuencia:usuario.Frecuencia,
+            nombre:usuario.nombre,
+            rol: usuario.rol,
+            pacientes: usuario.pacientes
+        };
+        sessionStorage.setItem('Doctor', JSON.stringify(Doctor));
+    }else{
+         usuario =  JSON.parse(sessionStorage.getItem("user"));
      console.log(usuario);
         Doctor = {
             id: usuario.id,
@@ -12,36 +28,13 @@ function ObtenerDoctor(){
             HoraSalida:usuario.horaSalida,
             Frecuencia:usuario.frecuencia,
             nombre:usuario.nombre,
-            rol: usuario.rol  
-            
+            rol: usuario.rol,
+            pacientes: usuario.pacientes
         };
-
-        
-       /* let Doctores = [Doctor,Doctor,Doctor];
-
-        sessionStorage.setItem('Doctores', JSON.stringify(Doctores));
-        let arrayDoc =  JSON.parse(sessionStorage.getItem("Doctores"));
-        arrayDoc.forEach(function(Doctors){
-            Doctors = {
-            id: Doctors.id,
-            clave: Doctors.clave,
-            horaEntrada: Doctors.horaEntrada,
-            HoraSalida:Doctors.HoraSalida,
-            Frecuencia:Doctors.Frecuencia,
-            nombre:Doctors.nombre,
-            rol: Doctors.rol   
-        };
-            console.log(Doctors);
-        })
-        sessionStorage.setItem('Doctor', JSON.stringify(Doctor));*/
         sessionStorage.setItem('Doctor', JSON.stringify(Doctor));
-        console.log(Doctor.nombre);
-        console.log(Doctor.clave);
+    }
         
         Rellenar(Doctor.HoraSalida,Doctor.horaEntrada,Doctor.Frecuencia);
-        
-       
-
 }
 
 
@@ -59,15 +52,31 @@ const container = document.querySelectorAll('.container');
 var idDrag = "";
 var idUndrag = "";
 function Rellenar(horafinals, horas,frecuencias){
-    var horaFinal = parseInt(horafinals)
+    var horaFinal = parseInt(horafinals);
     var cont = 0;
     var hora = parseInt(horas) ; 
     var minutos = 0;
     var frecuencia = parseInt(frecuencias);
     var terminacion = "am";
+    
+    const tabla2 = document.getElementById('Tabla2');
+      
+         usuario =  JSON.parse(sessionStorage.getItem("Doctor"));
+        Doctor = {
+            pacientes: usuario.pacientes
+        };
+        let doctores =  Doctor.pacientes;
+        console.log(doctores.length);
+        doctores.forEach(paciente=>{
+             tabla2.innerHTML += `<td draggable="true"  class="draggable" id="Hola"> ${paciente.nombre}</td>`;
+        });
 
+    
+    
+    
+     const tabla = document.getElementById('Tabla');
     for(let i = hora; i<horaFinal; i+frecuencia){
-        const tabla = document.getElementById('Tabla');
+       
         if(hora <=11){
             terminacion = "am";
         }else{
@@ -76,7 +85,7 @@ function Rellenar(horafinals, horas,frecuencias){
         if(minutos === 0){
             tabla.innerHTML += `<tr class="container">
             <td>${hora}:00 ${terminacion}</td>  
-            <td draggable="true"  class="draggable" id="Hola" value="8:00am">Jeaustin Rodriguez Rodriguez${cont+1}</td>
+            <td draggable="true"  class="draggable" id="Hola"></td>
             <td draggable="true"  class="draggable" id="Hola2"></td>
             <td draggable="true"  class="draggable" id="Hola3"></td>
             <td draggable="true"  class="draggable" id="Hola4"></td>
@@ -87,7 +96,7 @@ function Rellenar(horafinals, horas,frecuencias){
         }else{
             tabla.innerHTML += `<tr class="container">
             <td>${hora}:${minutos} ${terminacion}</td>  
-            <td draggable="true"  class="draggable" id="Hola" value="8:00am">Jeaustin Rodriguez Rodriguez${cont+1}</td>
+            <td draggable="true"  class="draggable" id="Hola"></td>
             <td draggable="true"  class="draggable" id="Hola2"></td>
             <td draggable="true"  class="draggable" id="Hola3"></td>
             <td draggable="true"  class="draggable" id="Hola4"></td>

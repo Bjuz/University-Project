@@ -61,7 +61,7 @@ public class Paciente extends Usuario {
     }
 
     public Paciente(String motivo, String Tipo, String nombre) {
-        super(nombre,"","","");
+        super("","",nombre,"");
         this.motivo = motivo;
         this.Tipo = Tipo;
     }
